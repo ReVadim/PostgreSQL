@@ -11,7 +11,8 @@ create table if not exists Genre (
 
 create table if not exists SingerGenre (
 	singer_id integer references Singer(id),
-	genre_id integer references Genre(id)
+	genre_id integer references Genre(id),
+	constraint sg primary key (singer_id, genre_id)
 );
 
 create table if not exists Album (
@@ -42,6 +43,7 @@ create table if not exists Collection (
 
 create table if not exists TrackCollection (
 	track_id integer references TrackList(id),
-	collection_id integer references Collection(id)
+	collection_id integer references Collection(id),
+	constraint tc primary key (track_id, collection_id)
 );
 ```
