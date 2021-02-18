@@ -18,8 +18,7 @@ create table if not exists SingerGenre (
 create table if not exists Album (
 	id serial primary key,
 	name varchar(40) not null,
-	release date not null,
-	singer_id integer references Singer(id)
+	release date not null
 );
 
 create table if not exists Recording (
